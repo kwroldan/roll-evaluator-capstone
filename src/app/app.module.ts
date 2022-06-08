@@ -8,7 +8,7 @@ import { FeaturedWeaponsComponent } from './featured-weapons/featured-weapons.co
 @NgModule({
   declarations: [
     AppComponent,
-    FeaturedWeaponsComponent
+    FeaturedWeaponsComponent,
   ],
   imports: [
     BrowserModule,
