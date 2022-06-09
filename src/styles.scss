@@ -7,11 +7,39 @@ color: white;
 background-color: hsl(353, 27%, 12%);
 }
 
-.header {
+.nav-bar {
+  display: flex;
   background-color: hsl(353, 27%, 8%);
   margin-bottom: 40px;
   margin-top: 10px;
   padding: 10px;
+}
+
+.nav-bar > img {
+  width: 175px;
+  height: 100px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-links > li > a {
+  text-decoration: none;
+  color: white;
+  transition: 0.7s;
+}
+
+.nav-links > li > a:hover {
+  text-decoration: underline;
+  background-color:hsl(353, 27%, 3%);
+  font-size: 20px;
+}
+
+.nav-links > li + li {
+  margin-left: 20px;
 }
 
 h1 {
@@ -51,7 +79,7 @@ h3 {
 
 .preview-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-bottom: 30px;
 }
@@ -76,6 +104,7 @@ h3 {
 @media (max-width: 900px) {
   .preview-wrapper > img {
     width: 75%;
+    height:auto;
   }
 }
 
@@ -104,8 +133,8 @@ h3 {
 
 .featured-weapons {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-gap: 12px;
 }
 

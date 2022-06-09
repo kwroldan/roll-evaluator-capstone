@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeaturedWeaponsComponent } from './featured-weapons/featured-weapons.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeaturedWeaponsComponent,
     LandingPageComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
