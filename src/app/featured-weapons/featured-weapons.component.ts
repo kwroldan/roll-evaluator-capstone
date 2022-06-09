@@ -15,8 +15,8 @@ export class FeaturedWeaponsComponent implements OnInit {
   constructor(private featuredWeaponService: FeaturedWeaponService) {}
 
   ngOnInit(): void {
-    this.featuredWeaponService.fetchWeapons().subscribe(weapons => {
-      this.weapons = weapons
+    this.featuredWeaponService.fetchWeapons().subscribe(response => {
+      this.weapons = response.weapons
     })
   }
 

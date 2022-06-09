@@ -1,6 +1,14 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { Weapon } from './models';
+import { HttpClient } from '@angular/common/http';
+import { environment } from "../environments/environment";
+
+type WeaponsResponse = {
+  weapons: Weapon[]
+}
+
+const weaponsEndpoint = `${environment.baseApiUrl}/api/weapons`;
 
 @Injectable({
   providedIn: 'root'
@@ -8,28 +16,30 @@ import { Weapon } from './models';
 export class FeaturedWeaponService {
   weapons: Weapon[] = [{
     name: "Calus Mini-Tool",
-    imageUrl: "https://user-images.githubusercontent.com/98148778/172660332-410bc37b-7ca0-4804-ae22-2f632f56b0b5.jpg",
+    imageUrl: "https://ik.imagekit.io/kwroldan/Capstone/Calus_Mini_Tool_ceB-gCdmI.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654720693242",
     firstTrait: "Grave Robber",
     secondTrait: "Incadescent"
   },{
     name: "Austringer",
-    imageUrl: "https://user-images.githubusercontent.com/98148778/172661212-f5605294-79f8-43a9-aad6-41c8acdf8797.jpg",
+    imageUrl: "https://ik.imagekit.io/kwroldan/Capstone/Austringer_W66yh0aKI.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654720693430",
     firstTrait: "Outlaw",
     secondTrait: "Rampage"
   },{
     name: "Lingering Dread",
-    imageUrl: "https://user-images.githubusercontent.com/98148778/172661388-63661292-d576-403d-a438-0aeba24d5729.jpg",
+    imageUrl: "https://ik.imagekit.io/kwroldan/Capstone/LingeringDread_Qs3qI5BgS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654720693202",
     firstTrait: "Autoloading Holster",
     secondTrait: "Harmony"
   },{
     name: "Hollow Denial",
-    imageUrl: "https://user-images.githubusercontent.com/98148778/172661753-9c9e3b8e-f3b2-453b-940a-91eac14e8cf6.jpg",
+    imageUrl: "https://ik.imagekit.io/kwroldan/Capstone/HollowDenial_I7J7ezhE7q.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654720693686",
     firstTrait: "Lead from Gold",
     secondTrait: "Killing Tally"
   }];
 
+  constructor(private http: HttpClient) {}
+
   fetchWeapons() {
-    return of(this.weapons)
+    return this.http.get<WeaponsResponse>(weaponsEndpoint);
   }
 
 }
