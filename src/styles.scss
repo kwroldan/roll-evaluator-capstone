@@ -32,7 +32,7 @@ h3 {
   grid-template-columns: 10px 1fr;
   grid-template-rows: 1fr;
   background-color: hsl(353, 27%, 8%);
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   margin-top: 10px;
   padding: 10px;
 }
@@ -49,15 +49,14 @@ h3 {
   margin-top: 10px;
 }
 
-.nav-links > li > a {
+a {
   text-decoration: none;
   color: white;
   transition: 0.7s;
 }
 
-.nav-links > li > a:hover {
+a:hover {
   text-decoration: underline;
-  background-color:hsl(353, 27%, 3%);
   font-size: 20px;
 }
 
@@ -75,11 +74,11 @@ h3 {
 
 .hero-figure {
   text-align:center;
-  margin: 20px;
+  margin-bottom: 30px;
 }
 
 .hero-figure > img {
-  width: 75%;
+  width: 80%;
   border-radius: 4px;
   border: 4px outset hsl(353, 27%, 20%);
 }
@@ -95,27 +94,27 @@ h3 {
   text-align: center;
 }
 
-.preview-item > img {
+.preview-item > a > img {
   width: 90%;
-  height: 400px;
+  height: 300px;
   border-radius: 4px;
   border: 4px outset hsl(353, 27%, 20%);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .preview-wrapper {
     display: block;
     margin-bottom: 10px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .preview-item > img {
     width: 75%;
     height: auto;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .preview-wrapper > h3 {
     padding: 10px;
     margin-bottom: 10px;
@@ -124,7 +123,7 @@ h3 {
 
 .featured {
   background-color: hsl(353, 27%, 8%);
-  width: 60%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -142,7 +141,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-gap: 12px;
+  grid-gap: 20px;
 }
 
 .weapon {
@@ -150,7 +149,7 @@ h3 {
 }
 
 .weapon > img {
-  width: 70%;
+  width: 100%;
   border-radius: 4px;
   border: 4px outset hsl(353, 27%, 20%);
 }
