@@ -96,8 +96,8 @@ h3 {
 }
 
 .preview-item > img {
-  height: 400px;
   width: 90%;
+  height: 400px;
   border-radius: 4px;
   border: 4px outset hsl(353, 27%, 20%);
 }
@@ -109,9 +109,9 @@ h3 {
   }
 }
 @media (max-width: 900px) {
-  .preview-wrapper > img {
+  .preview-item > img {
     width: 75%;
-    height:auto;
+    height: auto;
   }
 }
 
