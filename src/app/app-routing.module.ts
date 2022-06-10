@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FeaturedWeaponsComponent } from './featured-weapons/featured-weapons.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RollEvaluatorComponent } from './roll-evaluator/roll-evaluator.component';
 
 const routes: Routes = [
   {
@@ -14,9 +15,9 @@ const routes: Routes = [
   },{
     path: 'featured-weapons',
     component: FeaturedWeaponsComponent
-  // },{
-  //   path: 'roll-evaluator',
-  //   // component:
+  },{
+    path: 'roll-evaluator',
+    component: RollEvaluatorComponent
 }];
 
 @NgModule({

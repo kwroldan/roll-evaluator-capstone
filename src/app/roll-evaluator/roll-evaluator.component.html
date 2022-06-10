@@ -1,0 +1,28 @@
+<div class="form-wrapper">
+  <form class="roll-evaluator">
+    <div class="form-option">
+      <label for="weapons" id="weapons">Choose your weapon:</label>
+      <select name="weapons" id="weapons">
+        <option disabled selected value> -- select weapon -- </option>
+        <option *ngFor="let weapon of weapons" value="{{weapon.name}}">{{weapon.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-option">
+      <label for="first-trait" id="first-trait">Select first trait:</label>
+      <select name="first-trait" id="first-trait">
+        <option disabled selected value> -- select 1st trait -- </option>
+      </select>
+    </div>
+
+    <div class="form-option">
+      <label for="second-trait" id="second-trait">Select second trait:</label>
+      <select name="second-trait" id="second-trait">
+        <option disabled selected value> -- select 2nd trait -- </option>
+      </select>
+    </div>
+    <div class="submit-wrapper">
+      <input type="submit" id="submit" value="Evaluate">
+    </div>
+  </form>
+</div>

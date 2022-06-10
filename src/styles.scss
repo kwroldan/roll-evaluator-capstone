@@ -1,8 +1,9 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
 body {
-font-family: 'Ubuntu', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
 color: white;
 background-color: hsl(353, 27%, 12%);
 }
@@ -157,4 +158,55 @@ a:hover {
 .weapon > h3 {
   font-size: 16px;
 }
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.roll-evaluator {
+  display: block;
+}
+
+.form-option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-option > label + select {
+  margin-left: 20px;
+}
+
+.form-option + .form-option {
+  margin-top: 15px;
+}
+
+select {
+  width: 300px;
+  text-align: center;
+  background-color:hsl(353, 27%, 80%);
+  padding: 10px;
+}
+
+.submit-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#submit {
+  margin-top: 15px;
+  text-align:center;
+  background-color: hsl(353, 27%, 80%);
+  border: solid 4px hsl(353, 37%, 80%);
+  border-radius: 4px;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+#submit:hover {
+  background-color: hsl(353, 27%, 50%);
+  border: solid 4px hsl(353, 27%, 50%);
+}
+
 

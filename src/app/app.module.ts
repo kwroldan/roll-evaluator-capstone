@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FeaturedWeaponsComponent } from './featured-weapons/featured-weapons.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RollEvaluatorComponent } from './roll-evaluator/roll-evaluator.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     FeaturedWeaponsComponent,
     LandingPageComponent,
     NavBarComponent,
+    RollEvaluatorComponent,
   ],
   imports: [
     BrowserModule,
