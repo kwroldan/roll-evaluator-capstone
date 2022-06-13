@@ -15,4 +15,5 @@ export type Weapon = {
   secondTrait5: string;
   secondTrait6: string;
   preferredCombo: string;
+  comboDescription: string;
 };

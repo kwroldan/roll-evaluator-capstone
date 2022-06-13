@@ -9,4 +9,5 @@ export class WeaponListingComponent {
   @Input() name!: string;
   @Input() imageUrl!: string;
   @Input() preferredCombo!: string;
+  @Input() comboDescription!: string;
 }
