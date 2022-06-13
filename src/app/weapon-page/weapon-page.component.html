@@ -1,0 +1,14 @@
+<main>
+  <p *ngIf="error; else weaponListing" class="error">
+    There was a problem getting the weapon list.
+  </p>
+  <ng-template #weaponListing>
+    <app-weapon-listing
+    *ngIf="weapon"
+    [name]="weapon.name"
+    [imageUrl]="weapon.imageUrl"
+    [preferredCombo]="weapon.preferredCombo"
+    >
+    </app-weapon-listing>
+  </ng-template>
+</main>

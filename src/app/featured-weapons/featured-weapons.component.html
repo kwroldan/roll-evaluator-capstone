@@ -3,12 +3,13 @@
   <div class="weapons-wrapper">
     <section class="featured-weapons">
       <div class="weapon" *ngFor="let weapon of weapons">
-        <app-weapon-listing
-        id="{{weapon.id}}"
-        [name]="weapon.name"
-        [imageUrl]="weapon.imageUrl"
-        >
-        </app-weapon-listing>
+        <a routerLink="/featured-weapons/{{weapon.name}}">
+          <app-weapon-listing
+          [name]="weapon.name"
+          [imageUrl]="weapon.imageUrl"
+          >
+          </app-weapon-listing>
+        </a>
       </div>
     </section>
   </div>

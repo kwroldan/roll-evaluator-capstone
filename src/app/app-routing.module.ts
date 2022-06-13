@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'roll-evaluator',
     component: RollEvaluatorComponent
   },{
-    path: 'featured-weapons/:id',
+    path: 'featured-weapons/:name',
     component: WeaponPageComponent
   },{
     path: '404',

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 import { Weapon } from './models';
 import { HttpClient } from '@angular/common/http';
 import { environment } from "../environments/environment";
+import { Observable, map } from 'rxjs';
 
 type WeaponsResponse = {
   weapons: Weapon[]
@@ -19,4 +19,12 @@ export class FeaturedWeaponService {
   fetchWeapons() {
     return this.http.get<WeaponsResponse>(weaponsEndpoint);
   }
+
+  fetchWeaponsByName(name: string): Observable<Weapon | undefined> {
+    return this.fetchWeapons().pipe(
+      map((response) => response.weapons
+      .find((weapon) => weapon.name === name))
+    );
+  }
+
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { FeaturedWeaponService } from '../featured-weapon.service';
+import { Weapon } from '../models';
 
 @Component({
   selector: 'app-weapon-page',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weapon-page.component.scss']
 })
 export class WeaponPageComponent implements OnInit {
+  weapon?: Weapon;
+  error = false;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private featuredWeaponService: FeaturedWeaponService
+  ) {}
 
-  ngOnInit(): void {
+  name = String(this.route.snapshot.paramMap.get("name"));
+  ngOnInit(){
+    this.getWeapon()
+  }
+
+  getWeapon(){
+    this.featuredWeaponService.fetchWeaponsByName(this.name).subscribe(response =>
+      this.weapon = response)
   }
 
 }
