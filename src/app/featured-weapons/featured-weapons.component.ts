@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import { FeaturedWeaponService } from '../featured-weapon.service';
-import { Weapon, Trait } from '../models';
+import { Weapon } from '../models';
 
 @Component({
   selector: 'app-featured-weapons',

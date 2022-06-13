@@ -8,6 +8,9 @@ import { FeaturedWeaponsComponent } from './featured-weapons/featured-weapons.co
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RollEvaluatorComponent } from './roll-evaluator/roll-evaluator.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WeaponPageComponent } from './weapon-page/weapon-page.component';
+import { WeaponListingComponent } from './weapon-listing/weapon-listing.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { RollEvaluatorComponent } from './roll-evaluator/roll-evaluator.componen
     LandingPageComponent,
     NavBarComponent,
     RollEvaluatorComponent,
+    PageNotFoundComponent,
+    WeaponPageComponent,
+    WeaponListingComponent,
   ],
   imports: [
     BrowserModule,

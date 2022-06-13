@@ -140,8 +140,8 @@ a:hover {
 
 .featured-weapons {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-gap: 20px;
 }
 
@@ -149,7 +149,7 @@ a:hover {
   text-align: center;
 }
 
-.weapon > img {
+app-weapon-listing > img {
   width: 100%;
   border-radius: 4px;
   border: 4px outset hsl(353, 27%, 20%);
@@ -209,4 +209,15 @@ select {
   border: solid 4px hsl(353, 27%, 50%);
 }
 
+.page-not-found-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 
+#page-not-found-image {
+  width: 60%;
+  height: auto;
+  border-radius: 4px;
+  border: 4px outset hsl(353, 27%, 20%);
+}
