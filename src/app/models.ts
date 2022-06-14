@@ -2,18 +2,41 @@ export type Weapon = {
   id: number;
   name: string;
   imageUrl: string;
-  firstTrait1: string;
-  firstTrait2: string;
-  firstTrait3: string;
-  firstTrait4: string;
-  firstTrait5: string;
-  firstTrait6: string;
-  secondTrait1: string;
-  secondTrait2: string;
-  secondTrait3: string;
-  secondTrait4: string;
-  secondTrait5: string;
-  secondTrait6: string;
   preferredCombo: string;
   comboDescription: string;
+  bungieHash: number;
 };
+
+export type WeaponsResponse = {
+  weapons: Weapon[]
+}
+
+export type StatsResponse = {
+  Response: {
+    stats: {
+      stats: WeaponStats;
+    }
+    hash: number;
+  }
+}
+
+export type WeaponStats = {
+    4043523819: {
+        value: number;
+    }
+    1240592695: {
+        value: number;
+    }
+    155624089: {
+        value: number;
+    }
+    943549884: {
+        value: number;
+    }
+    4188031367: {
+        value: number;
+    }
+    3871231066: {
+        value: number;
+    }
+  }

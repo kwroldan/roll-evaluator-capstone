@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseApiUrl: "http://localhost:8080",
+  thirdPartyApiUrl: "https://www.bungie.net/Platform/Destiny2/Manifest/DestinyInventoryItemDefinition/"
 };
 
 /*

@@ -11,6 +11,8 @@ import { RollEvaluatorComponent } from './roll-evaluator/roll-evaluator.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WeaponPageComponent } from './weapon-page/weapon-page.component';
 import { WeaponListingComponent } from './weapon-listing/weapon-listing.component';
+import { FormsModule } from '@angular/forms';
+import { EvaluatorFormComponent } from './evaluator-form/evaluator-form.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { WeaponListingComponent } from './weapon-listing/weapon-listing.componen
     PageNotFoundComponent,
     WeaponPageComponent,
     WeaponListingComponent,
+    EvaluatorFormComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

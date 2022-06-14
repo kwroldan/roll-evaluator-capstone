@@ -1,0 +1,32 @@
+<div class="form-wrapper">
+  <form class="roll-evaluator" #rollForm="ngForm" (ngSubmit)="evaluate(rollForm.value)">
+
+    <div class="form-option">
+      <label for="weapons" id="weapons">Choose your weapon:</label>
+      <select name="weapon" id="weapon" ngModel>
+        <option disabled selected value> -- select weapon -- </option>
+        <option *ngFor="let weapon of weapons" [value]="weapon.name">{{weapon.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-option">
+      <label for="firstTrait" id="firstTrait">Select first trait:</label>
+      <select name="firstTrait" id="firstTrait" ngModel>
+        <option disabled selected value> -- select 1st trait -- </option>
+        <option value="Grave Robber">Grave Robber</option>
+      </select>
+    </div>
+
+    <div class="form-option">
+      <label for="secondTrait" id="secondTrait">Select second trait:</label>
+      <select name="secondTrait" id="secondTrait" ngModel>
+        <option disabled selected value> -- select 2nd trait -- </option>
+        <option value="Incandescent">Incandescent</option>
+      </select>
+    </div>
+
+    <div class="submit-wrapper">
+      <input type="submit" id="submit" value="Evaluate">
+    </div>
+  </form>
+</div>

@@ -222,8 +222,10 @@ select {
   border: 4px outset hsl(353, 27%, 20%);
 }
 
-.individual-weapon-page {
+app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   margin: 20px;
+  background-color:hsl(353, 27%, 8%);
+  border: solid 4px hsl(353, 27%, 20%);
 }
 
 .individual-weapon-page-image {
@@ -237,9 +239,20 @@ select {
   width: 75%;
   border-radius: 4px;
   border: 4px outset hsl(353, 27%, 20%);
+  margin-top: 20px;
 }
 
 .combo-listing {
   text-align: center;
+  font-size: 22px;
+}
+
+.combo-description {
+  margin-top: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 

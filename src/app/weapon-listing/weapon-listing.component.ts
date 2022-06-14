@@ -10,4 +10,5 @@ export class WeaponListingComponent {
   @Input() imageUrl!: string;
   @Input() preferredCombo!: string;
   @Input() comboDescription!: string;
+  @Input() bungieHash!: number;
 }
