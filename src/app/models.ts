@@ -22,7 +22,7 @@ export type TraitsResponse = {
   traits: Trait[]
 }
 
-export type StatsResponse = {
+export type ApiResponse = {
   Response: {
     stats: {
       stats: WeaponStats;

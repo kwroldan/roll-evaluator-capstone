@@ -2,7 +2,51 @@
   <div class="individual-weapon-page-image">
     <img src="{{imageUrl}}" alt="{{name}}" />
   </div>
-    <h3>{{name}}</h3>
-    <p class="combo-listing">{{preferredCombo}}</p>
-    <p class="combo-description">{{comboDescription}}</p>
+  <h3>{{name}}</h3>
+  <p class="combo-listing">{{preferredCombo}}</p>
+  <p class="combo-description">{{comboDescription}}</p>
+  <div class="stat-reveal-button-wrapper">
+    <button
+    class="stat-reveal-button"
+    *ngIf="comboDescription"
+    [class.hidden]="statsRevealed === true"
+    (click)="toggleStats()"
+    >
+      Click to reveal stats
+    </button>
+  </div>
+  <div
+  [class.weapon-stat-listing]="statsRevealed === true"
+  [class.hidden]="statsRevealed === false"
+  >
+    <h3>Weapon Stats:</h3>
+    <div class="stat-table-wrapper">
+      <table>
+        <thead>
+          <th>Stat</th>
+          <th>Value</th>
+        </thead>
+        <tr>
+          <td>Impact</td>
+          <td>{{this.weaponImpact}}</td>
+        </tr>
+        <tr>
+          <td>Range</td>
+          <td>{{this.weaponRange}}</td>
+        </tr>
+        <tr>
+          <td>Stability</td>
+          <td>{{this.weaponStability}}</td>
+        </tr>
+        <tr>
+          <td>Handling</td>
+          <td>{{this.weaponHandling}}</td>
+        </tr>
+        <tr>
+          <td>Reload Speed</td>
+          <td>{{this.weaponReloadSpeed}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </section>

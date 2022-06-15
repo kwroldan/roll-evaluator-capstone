@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Weapon, StatsResponse, WeaponsResponse, TraitsResponse, Trait } from './models';
+import { Weapon, ApiResponse, WeaponsResponse, TraitsResponse, Trait } from './models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from "../environments/environment";
 import { Observable, map } from 'rxjs';
@@ -44,7 +44,7 @@ export class FeaturedWeaponService {
   fetchStats(bungieHash: number) {
     let headers = new HttpHeaders()
     headers = headers.set('X-API-Key', this.apiKey)
-    return this.http.get<StatsResponse>(`${statsEndpoint}/${bungieHash}`, {headers: headers});
+    return this.http.get<ApiResponse>(`${statsEndpoint}/${bungieHash}`, {headers: headers});
   }
 
   fetchStatsByWeaponName(name:string) {
