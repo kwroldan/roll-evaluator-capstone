@@ -45,7 +45,6 @@ export class WeaponListingComponent implements OnInit {
     this.weaponStability = this.stats![155624089].value
     this.weaponHandling = this.stats![943549884].value
     this.weaponReloadSpeed = this.stats![4188031367].value
-    this.weaponMagazine = this.stats![3871231066].value
   }
 
   getStats(name: string) {

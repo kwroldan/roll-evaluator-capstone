@@ -321,6 +321,46 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   margin-bottom: 20px;
 }
 
+.community-form-wrapper {
+  height: 200px;
+}
+
+.community-header-text {
+  margin-bottom: 40px;
+}
+
+.community-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 25px) 70px;
+  grid-gap: 5px;
+  width: 75%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.community-form > label {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.community-form > input {
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 4px solid hsl(353, 27%, 30%);
+  transition: 0.5s;
+}
+
+.community-form > input:focus {
+  background-color: hsl(353, 27%, 70%);
+}
+
+.community-form > .submit-wrapper {
+  width: 50%;
+
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

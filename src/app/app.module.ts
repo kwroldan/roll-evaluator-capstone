@@ -17,6 +17,7 @@ import { WeaponListingComponent } from './weapon-listing/weapon-listing.componen
 import { FormsModule } from '@angular/forms';
 import { EvaluatorFormComponent } from './evaluator-form/evaluator-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommunityPicksComponent } from './community-picks/community-picks.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     WeaponPageComponent,
     WeaponListingComponent,
     EvaluatorFormComponent,
+    CommunityPicksComponent,
   ],
   imports: [
     BrowserModule,
