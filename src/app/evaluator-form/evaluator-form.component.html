@@ -13,7 +13,7 @@
       <label for="firstTrait" id="firstTrait">Select first trait:</label>
       <select name="firstTrait" id="firstTrait" ngModel>
         <option disabled selected value> -- select 1st trait -- </option>
-        <option value="Grave Robber">Grave Robber</option>
+        <option *ngFor="let trait of traits" [value]="trait.name">{{trait.name}}</option>
       </select>
     </div>
 
@@ -21,7 +21,7 @@
       <label for="secondTrait" id="secondTrait">Select second trait:</label>
       <select name="secondTrait" id="secondTrait" ngModel>
         <option disabled selected value> -- select 2nd trait -- </option>
-        <option value="Incandescent">Incandescent</option>
+        <option *ngFor="let trait of traits" [value]="trait.name">{{trait.name}}</option>
       </select>
     </div>
 
@@ -29,4 +29,19 @@
       <input type="submit" id="submit" value="Evaluate">
     </div>
   </form>
+</div>
+
+<div
+[class.hidden]="selectedWeapon === undefined"
+[class.weapon-feedback]="selectedWeapon"
+>
+  <p>
+    You selected <em>{{selectedWeapon?.name}}</em> with the traits <em>{{selectedFirstTrait?.name}}</em> and <em>{{selectedSecondTrait?.name}}</em>.
+  </p>
+  <p>
+    Your PvE Rating is <em>{{pveScore}}</em> out of 10.
+  </p>
+  <p>
+    Your PvP Rating is <em>{{pvpScore}}</em> out of 10.
+  </p>
 </div>

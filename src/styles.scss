@@ -189,6 +189,10 @@ select {
   padding: 10px;
 }
 
+select:focus {
+  border: solid 4px hsl(353, 27%, 20%);
+}
+
 .submit-wrapper {
   display: flex;
   justify-content: center;
@@ -207,6 +211,23 @@ select {
 #submit:hover {
   background-color: hsl(353, 27%, 50%);
   border: solid 4px hsl(353, 27%, 50%);
+}
+
+.hidden {
+  display: none;
+}
+
+.weapon-feedback {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 50%;
+  margin-left: 35%;
+  margin-right: 30%;
+}
+
+em {
+  color: hsl(40, 83%, 67%);
+  font-weight: bold;
 }
 
 .page-not-found-wrapper {
@@ -256,3 +277,6 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   margin-bottom: 20px;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

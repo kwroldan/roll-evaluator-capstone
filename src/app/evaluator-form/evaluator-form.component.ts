@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Weapon } from '../models';
+import { Weapon, Trait } from '../models';
 import { FeaturedWeaponService } from '../featured-weapon.service';
 
 @Component({
@@ -9,16 +9,28 @@ import { FeaturedWeaponService } from '../featured-weapon.service';
 })
 export class EvaluatorFormComponent implements OnInit {
   weapons: Weapon[] = [];
+  traits: Trait[] = [];
 
-  updateTraits(){
-    
-  }
+  selectedWeapon?: Weapon;
+  selectedFirstTrait?: Trait;
+  selectedSecondTrait?: Trait;
+  pveScore?: number;
+  pvpScore?: number;
 
   evaluate(values: any){
-    const weapon = values.weapon
-    const firstTrait = values.firstTrait
-    const secondTrait = values.secondTrait
-    console.log(weapon, firstTrait, secondTrait)
+    this.selectedWeapon = this.weapons.find(weapon => weapon.name === values.weapon)
+    this.selectedFirstTrait = this.traits.find(trait => trait.name === values.firstTrait)
+    this.selectedSecondTrait = this.traits.find(trait => trait.name === values.secondTrait)
+    this.pveScore = this.calculatePveRating(this.selectedFirstTrait!, this.selectedSecondTrait!)
+    this.pvpScore = this.calculatePvpRating(this.selectedFirstTrait!, this.selectedSecondTrait!)
+  }
+
+  calculatePveRating(firstTrait: Trait, secondTrait: Trait){
+    return firstTrait.pveRating + secondTrait.pveRating
+  }
+
+  calculatePvpRating(firstTrait: Trait, secondTrait: Trait){
+    return firstTrait.pvpRating + secondTrait.pvpRating
   }
 
   constructor(private featuredWeaponService: FeaturedWeaponService) { }
@@ -26,7 +38,9 @@ export class EvaluatorFormComponent implements OnInit {
   ngOnInit(): void {
     this.featuredWeaponService.fetchWeapons().subscribe(response => {
       this.weapons = response.weapons
-      console.log(this.weapons)
+    })
+    this.featuredWeaponService.fetchTraits().subscribe(response => {
+      this.traits = response.traits
     })
   }
 }

@@ -37,9 +37,8 @@ export class WeaponPageComponent implements OnInit {
   }
 
   getStats(name: string) {
-    return this.featuredWeaponService.fetchStatsByWeaponName(name).subscribe(response =>
-      this.stats = response.Response.stats.stats
-    );
+    return this.featuredWeaponService.fetchStatsByWeaponName(name)
+      .subscribe(response =>
+        this.stats = response.Response.stats.stats)
   }
-
 }

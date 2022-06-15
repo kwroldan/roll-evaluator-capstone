@@ -11,6 +11,17 @@ export type WeaponsResponse = {
   weapons: Weapon[]
 }
 
+export type Trait = {
+  id: number;
+  name: string;
+  pveRating: number;
+  pvpRating: number;
+}
+
+export type TraitsResponse = {
+  traits: Trait[]
+}
+
 export type StatsResponse = {
   Response: {
     stats: {
