@@ -1,27 +1,29 @@
-# RollEvaluator
+# Destiny 2 Roll Evaluator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+[Click here](https://roaring-tanuki-5a6557.netlify.app) to view the application.
 
-## Development server
+![Home screen for roll evaluator app](https://i2.paste.pics/97f8b114ef9a75603a577c444c1c814a.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+### Weapon Evaluator
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Roll Evaluator
 
-## Build
+![Roll evaluator form showing example weapon with example traits](https://i2.paste.pics/7fb13d4c0888196779490a01e7942789.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Enter your weapon name, first trait, and second trait into the Roll Evaluator and click _Evaluate_ to receive feedback on the information you provided.
 
-## Running unit tests
+#### Featured Weapons
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![A grid of featured weapons from Season of the Haunted](https://i2.paste.pics/e314627db8ef0ad25874c37b52517e60.png)
 
-## Running end-to-end tests
+Click on any of the weapons to see a curated roll selected by the author of the website. The following page will show which traits are preferred and why.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Austringer Legendary Hand Cannon](https://i2.paste.pics/8f1f7366d08667e8353d300ba3767112.png)
 
-## Further help
+#### Community Favorites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Form to add new wepaons to the community weapons](https://i2.paste.pics/1e9563cadc1c3fe08fc8d076e3910f5b.png)
+
+On this page, the user can add their own preferred weapon with their favorite traits, as well as an image URL for their weapon.
