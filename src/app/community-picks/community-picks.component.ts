@@ -40,6 +40,7 @@ export class CommunityPicksComponent implements OnInit {
   }
 
   editCommunityPick(updatedPick: Pick) {
+    console.log(updatedPick)
     this.featuredWeaponService.editCommunityPick(updatedPick)
   }
 

@@ -76,7 +76,8 @@ export class FeaturedWeaponService {
   }
 
   editCommunityPick(selectedPick: Pick){
-    console.log(selectedPick)
+    console.log(selectedPick.id)
+    return this.http.put(`${picksEndpoint}/${selectedPick.id}`, selectedPick, httpOptions).subscribe()
   }
 
 }

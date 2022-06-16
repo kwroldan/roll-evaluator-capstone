@@ -53,6 +53,7 @@ export type WeaponStats = {
   }
 
   export type Pick = {
+    id: number;
     name: string;
     imageUrl: string;
     firstTrait: string;

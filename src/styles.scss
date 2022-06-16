@@ -238,6 +238,7 @@ select:focus {
 #submit:hover {
   background-color: hsl(353, 27%, 50%);
   border: solid 4px hsl(353, 27%, 50%);
+  cursor:pointer;
 }
 
 .hidden {
