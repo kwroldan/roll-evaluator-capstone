@@ -26,7 +26,7 @@ export class CommunityPicksComponent implements OnInit {
     console.log(newPick)
     return this.featuredWeaponService.addCommunityPick(newPick).subscribe
       (response => {
-        this.picks = [ ...this.picks, response.community]
+        this.picks = [ ...this.picks, response.pick]
     })
   }
 
@@ -36,7 +36,7 @@ export class CommunityPicksComponent implements OnInit {
 
   ngOnInit(): void {
     this.featuredWeaponService.fetchCommunityPicks().subscribe(response => {
-      this.picks = response.communities
+      this.picks = response.picks
     })
   }
 

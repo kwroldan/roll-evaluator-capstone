@@ -61,9 +61,9 @@ export type WeaponStats = {
   }
 
   export type PicksResponse = {
-    communities: Pick[];
+    picks: Pick[];
   }
 
   export type PickResponse = {
-    community: Pick;
+    pick: Pick;
   }

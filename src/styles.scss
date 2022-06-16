@@ -386,8 +386,9 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
 }
 
 .community-weapons {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .community-weapons > .weapons-wrapper {
