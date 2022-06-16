@@ -1,22 +1,29 @@
-  <h2 class="community-header-text">Community Weapon Picks</h2>
-  <div class="community-form-wrapper">
-    <form class="community-form">
+<div class="add-weapon-button">
+  <button id="add-weapon-button" (click)="toggleForm()">Add a Weapon</button>
+</div>
 
-        <label for="weapon" id="weapon">Enter your weapon name:</label>
-        <input type="text" placeholder="e.g. Stormchaser" name="weapon" id="weapon">
+<div class="community-form-wrapper">
+    <form
+    [class.hidden]="formRevealed === false"
+    [class.community-form]="formRevealed === true"
+    #addWeaponForm="ngForm"
+    (ngSubmit)="addCommunityPick(addWeaponForm.value)"
+    >
 
-        <label for="image" id="image">Enter image link:</label>
-        <input type="text" placeholder="e.g. https://ik.imagekit.io/kwroldan/Capstone/Stormchaser_b8ha5WBBM.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654793026186" name="image" id="image">
+        <label for="name" id="name">Enter your weapon name:</label>
+        <input type="text" placeholder="e.g. Stormchaser" name="name" id="name" ngModel>
 
+        <label for="imageUrl" id="imageUrl">Enter image link:</label>
+        <input type="text" placeholder="e.g. https://ik.imagekit.io/kwroldan/Capstone/Stormchaser_b8ha5WBBM.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654793026186" name="imageUrl" id="imageUrl" ngModel>
 
-        <label for="first_trait" id="first_trait">Enter first trait:</label>
-        <input type="text" placeholder="e.g. Rapid Hit" name="first_trait" id="first_trait">
+        <label for="firstTrait" id="firstTrait">Enter first trait:</label>
+        <input type="text" placeholder="e.g. Rapid Hit" name="firstTrait" id="firstTrait" ngModel>
 
-        <label for="second_trait" id="second_trait">Enter second trait:</label>
-        <input type="text" placeholder="e.g. Vorpal Weapon" name="second_trait" id="second_trait">
+        <label for="secondTrait" id="secondTrait">Enter second trait:</label>
+        <input type="text" placeholder="e.g. Vorpal Weapon" name="secondTrait" id="secondTrait" ngModel>
 
         <label for="comment" id="comment">Enter comments:</label>
-        <input type="text" placeholder="e.g. This is a great option for solo players!" name="comment" id="comment">
+        <input type="text" placeholder="e.g. This is a great option for solo players!" name="comment" id="comment" ngModel>
 
         <div class="submit-wrapper">
           <input type="submit" id="submit" value="Submit!">
@@ -24,3 +31,22 @@
 
     </form>
   </div>
+
+<div class="community-weapons-wrapper">
+  <h2 class="community-header-text">Community Weapon Picks</h2>
+  <div class="weapons-wrapper">
+    <section class="community-weapons">
+      <div class="weapon" *ngFor="let pick of picks">
+        <h3 id="community-weapon-title">{{pick.name}}</h3>
+        <img src="{{pick.imageUrl}} alt={{pick.name}}" />
+        <h4>Perks:</h4>
+        <p>{{pick.firstTrait}} and {{pick.secondTrait}}</p>
+        <h4>Comments:</h4>
+        <p id="comment">{{pick.comment}}</p>
+        <button>Edit Weapon</button>
+        <button>Delete Weapon</button>
+      </div>
+    </section>
+  </div>
+
+</div>

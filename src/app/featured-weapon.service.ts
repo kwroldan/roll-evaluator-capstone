@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Weapon, ApiResponse, WeaponsResponse, TraitsResponse, Trait } from './models';
+import { Weapon, ApiResponse, WeaponsResponse, TraitsResponse, Trait, PicksResponse, PickResponse, Pick } from './models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from "../environments/environment";
 import { Observable, map } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 
-const weaponsEndpoint = `${environment.baseApiUrl}/api/weapons`;
-const traitsEndpoint = `${environment.baseApiUrl}/api/traits`;
+const weaponsEndpoint = `${environment.baseApiUrl}weapons`;
+const traitsEndpoint = `${environment.baseApiUrl}traits`;
 const statsEndpoint = `${environment.thirdPartyApiUrl}`;
+const picksEndpoint = `${environment.baseApiUrl}community-picks`;
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    // 'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin' : '*'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +66,14 @@ export class FeaturedWeaponService {
         this.fetchStats(weapon!.bungieHash)
       )
     )
+  }
+
+  fetchCommunityPicks(){
+    return this.http.get<PicksResponse>(picksEndpoint);
+  }
+
+  addCommunityPick(newPick: Pick){
+    return this.http.post<PickResponse>(picksEndpoint, newPick, httpOptions)
   }
 
 }

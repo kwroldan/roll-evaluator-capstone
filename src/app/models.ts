@@ -51,3 +51,19 @@ export type WeaponStats = {
         value: number;
     }
   }
+
+  export type Pick = {
+    name: string;
+    imageUrl: string;
+    firstTrait: string;
+    secondTrait: string;
+    comment: string;
+  }
+
+  export type PicksResponse = {
+    communities: Pick[];
+  }
+
+  export type PickResponse = {
+    community: Pick;
+  }

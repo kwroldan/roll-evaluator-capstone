@@ -28,6 +28,14 @@ h3 {
   margin-bottom: 20px;
 }
 
+h4 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .nav-bar {
   display: grid;
   grid-template-columns: 10px 1fr;
@@ -321,8 +329,24 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   margin-bottom: 20px;
 }
 
-.community-form-wrapper {
-  height: 200px;
+.add-weapon-button {
+  display: flex;
+  justify-content: center;
+}
+
+#add-weapon-button {
+  margin-top: 15px;
+  text-align:center;
+  background-color: hsl(353, 27%, 80%);
+  border: solid 4px hsl(353, 37%, 80%);
+  border-radius: 4px;
+  transition: 0.5s;
+  padding: 5px;
+}
+
+#add-weapon-button:hover {
+  background-color: hsl(353, 27%, 50%);
+  border: solid 4px hsl(353, 27%, 50%);
 }
 
 .community-header-text {
@@ -337,6 +361,7 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   width: 75%;
   margin-left: 30%;
   margin-right: 30%;
+  margin-bottom: 20px;
 }
 
 .community-form > label {
@@ -358,9 +383,40 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
 
 .community-form > .submit-wrapper {
   width: 50%;
-
 }
 
+.community-weapons {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.community-weapons > .weapons-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.community-weapons > .weapon {
+  background-color:hsl(353, 27%, 8%);
+  border: solid 4px hsl(353, 27%, 20%);
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+#community-weapon-title {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.community-weapons > .weapon > img {
+  width: 90%;
+  border-radius: 4px;
+  border: 4px outset hsl(353, 27%, 20%);
+}
+
+#comment {
+  margin-bottom: 10px;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

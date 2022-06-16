@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
 import { FeaturedWeaponService } from '../featured-weapon.service';
 import { Weapon } from '../models';
 
