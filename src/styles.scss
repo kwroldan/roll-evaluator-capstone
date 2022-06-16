@@ -334,8 +334,10 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   justify-content: center;
 }
 
-#add-weapon-button {
+#add-weapon-button, #edit-weapon-button {
   margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
   text-align:center;
   background-color: hsl(353, 27%, 80%);
   border: solid 4px hsl(353, 37%, 80%);
@@ -417,6 +419,19 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
 
 #comment {
   margin-bottom: 10px;
+}
+
+.edit-weapon-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-weapon-form > input {
+  background-color: hsl(353, 27%, 80%);
+  border: 2px solid hsl(353, 27%, 12%);
+  padding: 10px;
+  width: 80%;
+  margin-left: 5%;
 }
 
 html, body { height: 100%; }

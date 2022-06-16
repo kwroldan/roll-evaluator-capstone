@@ -75,4 +75,8 @@ export class FeaturedWeaponService {
     return this.http.post<PickResponse>(picksEndpoint, newPick, httpOptions)
   }
 
+  editCommunityPick(selectedPick: Pick){
+    console.log(selectedPick)
+  }
+
 }

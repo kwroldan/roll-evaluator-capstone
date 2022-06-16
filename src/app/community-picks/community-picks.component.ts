@@ -12,13 +12,22 @@ export class CommunityPicksComponent implements OnInit {
 
   constructor(private featuredWeaponService: FeaturedWeaponService) {}
 
-  formRevealed = false;
+  addFormRevealed = false;
+  editFormRevealed = false;
 
-  toggleForm() {
-    if (this.formRevealed === false) {
-      this.formRevealed = true
+  toggleAddForm() {
+    if (this.addFormRevealed === false) {
+      this.addFormRevealed = true
     } else {
-      this.formRevealed = false;
+      this.addFormRevealed = false;
+    }
+  }
+
+  toggleEditForm() {
+    if (this.editFormRevealed === false) {
+      this.editFormRevealed = true
+    } else {
+      this.editFormRevealed = false;
     }
   }
 
@@ -28,6 +37,10 @@ export class CommunityPicksComponent implements OnInit {
       (response => {
         this.picks = [ ...this.picks, response.pick]
     })
+  }
+
+  editCommunityPick(updatedPick: Pick) {
+    this.featuredWeaponService.editCommunityPick(updatedPick)
   }
 
   reloadPage() {

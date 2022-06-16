@@ -1,11 +1,12 @@
 <div class="add-weapon-button">
-  <button id="add-weapon-button" (click)="toggleForm()">Add a Weapon</button>
+  <button id="add-weapon-button" (click)="toggleAddForm()">Add a Weapon</button>
+  <button id="edit-weapon-button" (click)="toggleEditForm()">Edit Weapons</button>
 </div>
 
 <div class="community-form-wrapper">
     <form
-    [class.hidden]="formRevealed === false"
-    [class.community-form]="formRevealed === true"
+    [class.hidden]="addFormRevealed === false"
+    [class.community-form]="addFormRevealed === true"
     #addWeaponForm="ngForm"
     (ngSubmit)="addCommunityPick(addWeaponForm.value)"
     >
@@ -43,8 +44,25 @@
         <p>{{pick.firstTrait}} and {{pick.secondTrait}}</p>
         <h4>Comments:</h4>
         <p id="comment">{{pick.comment}}</p>
-        <button>Edit Weapon</button>
-        <button>Delete Weapon</button>
+
+        <form
+        #editCommunityForm="ngForm"
+        [class.hidden]="editFormRevealed === false"
+        [class.edit-weapon-form]="editFormRevealed === true"
+        (ngSubmit)="editCommunityPick(editCommunityForm.value)"
+        >
+
+          <input [(ngModel)]="pick!.name" type="text" name="name" id="name" placeholder="Name:">
+          <input [(ngModel)]="pick!.imageUrl" type="text" name="imageUrl" id="imageUrl" placeholder="Image URL:">
+          <input [(ngModel)]="pick!.firstTrait" type="text" name="firstTrait" id="firstTrait" placeholder="First Trait:">
+          <input [(ngModel)]="pick!.secondTrait" type="text" name="secondTrait" id="secondTrait" placeholder="Second Trait:">
+          <input [(ngModel)]="pick!.comment" type="text" name="comment" id="comment" placeholder="Comments:">
+
+        </form>
+
+
+
+        <button class="hidden">Delete Weapon</button>
       </div>
     </section>
   </div>
