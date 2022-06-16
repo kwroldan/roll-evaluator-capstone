@@ -32,7 +32,6 @@ export class CommunityPicksComponent implements OnInit {
   }
 
   addCommunityPick(newPick: Pick) {
-    console.log(newPick)
     return this.featuredWeaponService.addCommunityPick(newPick).subscribe
       (response => {
         this.picks = [ ...this.picks, response.pick]
@@ -40,12 +39,11 @@ export class CommunityPicksComponent implements OnInit {
   }
 
   editCommunityPick(updatedPick: Pick) {
-    console.log(updatedPick)
     this.featuredWeaponService.editCommunityPick(updatedPick)
   }
 
-  reloadPage() {
-    window.location.reload()
+  deleteCommunityPick(id: number) {
+    this.featuredWeaponService.deleteCommunityPick(id);
   }
 
   ngOnInit(): void {

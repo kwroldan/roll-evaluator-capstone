@@ -62,9 +62,10 @@
           <input type="submit" name="submit" id="submit" value="Update Weapon">
         </form>
 
-
-
-        <button class="hidden">Delete Weapon</button>
+        <button
+        (click)="deleteCommunityPick(pick.id)"
+        id="delete-weapon-button"
+        >Delete Weapon</button>
       </div>
     </section>
   </div>

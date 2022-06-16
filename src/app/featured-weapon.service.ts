@@ -80,4 +80,8 @@ export class FeaturedWeaponService {
     return this.http.put(`${picksEndpoint}/${selectedPick.id}`, selectedPick, httpOptions).subscribe()
   }
 
+  deleteCommunityPick(id: number) {
+    return this.http.delete<Pick>(`${picksEndpoint}/${id}`).subscribe()
+  }
+
 }
