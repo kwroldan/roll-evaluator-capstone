@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Weapon, ApiResponse, WeaponsResponse, TraitsResponse, Trait, PicksResponse, PickResponse, Pick } from './models';
+import { Weapon, ApiResponse, WeaponsResponse, TraitsResponse, Trait, PicksResponse, PickResponse, Pick, Key, KeyResponse } from './models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from "../environments/environment";
 import { Observable, map } from 'rxjs';
@@ -10,6 +10,7 @@ const weaponsEndpoint = `${environment.baseApiUrl}weapons`;
 const traitsEndpoint = `${environment.baseApiUrl}traits`;
 const statsEndpoint = `${environment.thirdPartyApiUrl}`;
 const picksEndpoint = `${environment.baseApiUrl}community-picks`;
+const keyEndpoint = `${environment.baseApiUrl}abrakadabra/key`;
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,9 +23,22 @@ const httpOptions = {
 })
 
 export class FeaturedWeaponService {
-  private apiKey = '591cec31aee5404b9fb4621e9b534642';
+  private apiResponse: Key[] = [];
+  private apiKey = '';
 
   constructor(private http: HttpClient) {}
+
+  fetchKeys() {
+    return this.http.get<KeyResponse>(keyEndpoint);
+  }
+
+  fetchApiKey() {
+    this.fetchKeys().subscribe(response =>
+      this.apiResponse = response.keys
+    )
+    this.apiKey = this.apiResponse[0].key
+    return this.apiKey
+  }
 
   fetchTraits() {
     return this.http.get<TraitsResponse>(traitsEndpoint);
@@ -50,13 +64,15 @@ export class FeaturedWeaponService {
 
   fetchStats(bungieHash: number) {
     let headers = new HttpHeaders()
-    headers = headers.set('X-API-Key', this.apiKey)
+    const bungieApiKey = this.fetchApiKey()
+    headers = headers.set('X-API-Key', bungieApiKey)
     return this.http.get<ApiResponse>(`${statsEndpoint}/${bungieHash}`, {headers: headers});
   }
 
   fetchStatsByWeaponName(name:string) {
     let headers = new HttpHeaders()
-    headers = headers.set('X-API-Key', this.apiKey)
+    const bungieApiKey = this.fetchApiKey()
+    headers = headers.set('X-API-Key', bungieApiKey)
     return this.fetchWeapons().pipe(
       map((response) =>
         response.weapons.find((weapon) => weapon.name === name)

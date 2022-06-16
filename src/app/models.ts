@@ -68,3 +68,12 @@ export type WeaponStats = {
   export type PickResponse = {
     pick: Pick;
   }
+
+  export type Key = {
+    id: number;
+    key: string;
+  }
+
+  export type KeyResponse = {
+    keys: Key[];
+  }

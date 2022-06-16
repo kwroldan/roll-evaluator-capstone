@@ -382,7 +382,7 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   justify-content: center;
 }
 
-#add-weapon-button, #edit-weapon-button {
+#add-weapon-button, #edit-weapon-button, #delete-weapon-button {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 10px;
@@ -481,6 +481,7 @@ app-weapon-page > main > app-weapon-listing > .individual-weapon-page {
   width: 80%;
   margin-left: 5%;
 }
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
